@@ -29,7 +29,6 @@ export default function Character() {
 
   useEffect(() => {
     if (data) {
-      console.log('data: ', data);
       setComicCollection(id, data.data.results);
     }
   }, [id, data, setComicCollection]);
