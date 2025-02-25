@@ -2,11 +2,8 @@ import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
 export async function GET(req: Request, { params }: { params: { slug: number } }) {
-  const { slug } = params;
-  if (!slug) {
-    return NextResponse.json({ error: 'Missing character ID' }, { status: 400 });
-  }
   try {
+    const { slug } = params;
     const apiKey = process.env.NEXT_PUBLIC_API_PUBLIC_KEY;
     const privateKey = process.env.NEXT_PUBLIC_API_PRIVATE_KEY;
 
