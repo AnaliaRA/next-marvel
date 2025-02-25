@@ -35,6 +35,9 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <p>PUBLIC SITE URL: {process.env.NEXT_PUBLIC_SITE_URL}</p>
+      <p>PUBLIC SITE URL: {process.env.VERCEL_URL}</p>
+
       <ul className={styles.charactersContainer}>
         {memoizedCharacters.map((character) => {
           return (
