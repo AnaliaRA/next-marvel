@@ -1,0 +1,10 @@
+.footer {
+  padding: 2px;
+  width: var(--width);
+  color: var(--copy-text-color);
+}
+
+.rights {
+  float: right;
+  color: #e1e1e1;
+}

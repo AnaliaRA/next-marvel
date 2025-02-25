@@ -1,0 +1,123 @@
+.card {
+    --favorite-color: var(--marvel-red);
+    --hover-after: scaleY(1);
+    --padding: 2em;
+    --text-color: #ffffff;
+    flex-wrap: wrap;
+    height: 14.60em;
+    margin: 0;
+    padding: var(--padding);
+    position: relative;
+    width: 10.75em;
+}
+
+.innerCard {
+    --background-color: #000000;
+    background-color: var(--background-color);
+    clip-path:
+            polygon(
+                /* top right */
+                    100% 0,
+                        /* right */
+                    100% 95%,
+                        /* bottom right */
+                    95% 100%,
+                        /* bottom left */
+                    0 100%,
+                        /* top left */
+                    0 0
+            );
+    display: inline-grid;
+    isolation: isolate;
+    margin-top: -0.25em;
+    position: relative;
+    z-index: 1;
+}
+
+.innerCard img {
+    aspect-ratio: 1/1;
+    height: 10.75em;
+    margin: 0;
+    padding: 0;
+    width: 10.75em;
+}
+
+.actions {
+    --background-color: #000000;
+    border-top: 0.25em solid var(--marvel-red);
+    display: inline-grid;
+    margin-top: -0.25em;
+    padding: 1.75em 5.37em;
+    position: relative;
+    z-index: 3;
+}
+
+.actions::after {
+    background-color: var(--marvel-red);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.5s;
+    width: 100%;
+    z-index: 2;
+}
+
+.innerCard a {
+    bottom: 1.5em;
+    color: var(--text-color);
+    font-size: 0.90em;
+    font-weight: normal;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.name {
+    left: 1em;
+    vertical-align: center;
+}
+
+.favorites {
+    right: 1em;
+    top: 1em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.favorites:hover {
+    transform: scale(1.1);
+}
+
+.heartIcon {
+    width: 16px;
+    height: 16px;
+    transition: fill 0.2s, stroke 0.2s;
+}
+
+.favorites .heartIcon {
+}
+
+.favorites.addFav .heartIcon {
+    stroke: white;
+}
+
+.favorites.removeFav .heartIcon {
+    fill: var(--favorite-color);
+    width: 17px;
+    height: 17px;
+}
+
+.actions:hover::after,
+.innerCard:hover .actions::after {
+    transform: var(--hover-after);
+}
+
+.actions:hover .heartIcon,
+.innerCard:hover .actions:hover .heartIcon {
+    fill: white;
+}

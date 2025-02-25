@@ -1,0 +1,39 @@
+.header {
+  background: #000000;
+  height: 5em;
+  width: var(--width);
+  vertical-align: center;
+  border-bottom: 1px solid #333333;
+}
+
+.logo {
+  --padding: 1em;
+  padding: 1em 1em 1em var(--padding);
+}
+
+.favoritesLink {
+  float: right;
+  padding: 2em 1.6em;
+  color: white;
+}
+
+/* Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .logo {
+    --padding: 3.85em;
+    padding-left: var(--padding);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    --padding: 3.85em;
+    padding-left: var(--padding);
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  .logo {
+    --padding: 3em;
+    padding-left: var(--padding);
+  }
+}
