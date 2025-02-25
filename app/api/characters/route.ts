@@ -11,9 +11,7 @@ export async function GET() {
       throw new Error('API keys are not defined');
     }
 
-    const timestampRes = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/timestamp`);
-    if (!timestampRes.ok) throw new Error('Failed to get timestamp data');
-    const { timestamp } = await timestampRes.json();
+    const timestamp = Date.now().toString();
 
     const hash = crypto
       .createHash('md5')
