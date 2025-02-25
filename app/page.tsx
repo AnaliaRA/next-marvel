@@ -34,7 +34,8 @@ export default function Home() {
   if (error) return <p>Error loading data</p>;
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} aria-labelledby='title' tabIndex={-1}>
+      <h1 id="title" className={styles.visuallyHidden}>Marvel Characters</h1>
       <ul className={styles.charactersContainer}>
         {memoizedCharacters.map((character) => {
           return (
