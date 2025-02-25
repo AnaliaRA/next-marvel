@@ -25,6 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     if (data) {
+      console.log('data env: ', process.env.NEXT_PUBLIC_SITE_URL, process.env.VERCEL_URL);
       setCharacters(data.data.results);
     }
   }, [data, setCharacters]);
