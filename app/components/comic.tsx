@@ -18,10 +18,9 @@ interface ComicProps {
 
 
 
-const Comic: React.FC<ComicProps> = ({ id, dates, title, thumbnail }) => {
+const Comic: React.FC<ComicProps> = ({ id,/* dates,*/ title, thumbnail }) => {
   const imageSrc = `${thumbnail.path}.${thumbnail.extension}`;
   const imageAlt = `${title} cover`;
-  console.log(dates)
   return (
     <div key={id} className={styles.card}>
       <Image
