@@ -1,7 +1,7 @@
 .card {
     flex: 0 0 auto;
     width: 160px;
-    text-align: center;
+    text-align: left;
     scroll-snap-align: start;
     padding: 2em 2em 0 0;
 }
@@ -18,9 +18,10 @@
 }
 
 .year {
-    font-size: 0.8em;
+    font-size: 0.706em;
     font-weight: lighter;
     color: #777777;
+    line-height: 0.826;
 }
 
 /* Mobile */

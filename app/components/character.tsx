@@ -17,7 +17,7 @@ interface CharacterProps {
 const Character: React.FC<CharacterProps> = ({ id, name, thumbnail }) => {
   const imageSrc = `${thumbnail.path}.${thumbnail.extension}`;
   return (
-    <li key={id} className={styles.card}>
+    <li key={id} className={styles.card} aria-label={`Character card for ${name}`}>
       <div className={styles.innerCard}>
         <Image
           alt={name}

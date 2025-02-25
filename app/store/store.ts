@@ -2,10 +2,12 @@ import { create } from 'zustand';
 
 interface Comic {
   id: number;
-  dates: {
-    type: string;
-    date: string;
-  }
+  dates: [
+    {
+      date: string;
+      type: string;
+    }
+  ]
   title: string;
   thumbnail: {
     extension: string;

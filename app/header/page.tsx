@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} aria-label='Main header' tabIndex={-1}>
       <div className={styles.container}>
         <Link href="/">
           <Image
@@ -16,7 +16,9 @@ export default function Header() {
             width={130}
           />
         </Link>
-        <Link className={styles.favoritesLink} href="" onClick={void(0)}>Favorites</Link>
+        <Link className={styles.favoritesLink} href="" onClick={void 0}>
+          Favorites
+        </Link>
       </div>
     </header>
   );

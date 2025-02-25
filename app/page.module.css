@@ -9,3 +9,7 @@
     width: 100vw;
     margin: 0;
 }
+
+.visuallyHidden {
+    visibility: hidden;
+}
