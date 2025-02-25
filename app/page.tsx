@@ -25,10 +25,6 @@ export default function Home() {
 
   useEffect(() => {
     if (data) {
-      console.log('PUBLIC KEY: ', process.env.NEXT_PUBLIC_API_PUBLIC_KEY);
-      console.log('PRIVATE KEY: ', process.env.NEXT_PUBLIC_API_PRIVATE_KEY);
-      console.log('PUBLIC SITE URL: ', process.env.NEXT_PUBLIC_SITE_URL);
-      console.log('PUBLIC API USER: ', process.env.NEXT_PUBLIC_API_USER);
       setCharacters(data.data.results);
     }
   }, [data, setCharacters]);
@@ -39,9 +35,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <p>PUBLIC SITE URL: {process.env.NEXT_PUBLIC_SITE_URL}</p>
-      <p>PUBLIC SITE URL: {process.env.VERCEL_URL}</p>
-
       <ul className={styles.charactersContainer}>
         {memoizedCharacters.map((character) => {
           return (
