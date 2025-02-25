@@ -1,14 +1,21 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-export async function GET(req: Request, { params }: { params: { slug: number } }) {
+export async function GET(req: NextRequest) {
   try {
-    const { slug } = params;
+
+    const { pathname } = new URL(req.url);
+    const id = pathname.split('/').at(-2);
+
     const apiKey = process.env.NEXT_PUBLIC_API_PUBLIC_KEY;
     const privateKey = process.env.NEXT_PUBLIC_API_PRIVATE_KEY;
 
     if (!privateKey || !apiKey) {
       throw new Error('API keys are not defined');
+    }
+
+    if (!id) {
+      return NextResponse.json({ error: 'Slug is required' }, { status: 400 });
     }
 
     const timestampRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/timestamp`);
@@ -20,7 +27,7 @@ export async function GET(req: Request, { params }: { params: { slug: number } }
       .update(timestamp + privateKey + apiKey)
       .digest('hex');
 
-    const endpoint = `https://gateway.marvel.com/v1/public/characters/${slug}/comics`;
+    const endpoint = `https://gateway.marvel.com/v1/public/characters/${id}/comics`;
 
     const url = new URL(endpoint);
     url.search = new URLSearchParams({

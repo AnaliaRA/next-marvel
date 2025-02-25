@@ -52,6 +52,11 @@
     width: 40%;
 }
 
+.image {
+    height: 100%;
+    width: 100%;
+}
+
 .textContainer {
     color: var(--character-text-color);
     margin: 0;

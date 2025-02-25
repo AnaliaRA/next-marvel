@@ -29,6 +29,7 @@ export default function Character() {
 
   useEffect(() => {
     if (data) {
+      console.log('data: ', data);
       setComicCollection(id, data.data.results);
     }
   }, [id, data, setComicCollection]);
@@ -51,7 +52,6 @@ export default function Character() {
               className={styles.image}
               height={300}
               width={300}
-              layout="responsive"
               src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
               priority
             />
