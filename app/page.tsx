@@ -25,14 +25,10 @@ export default function Home() {
 
   useEffect(() => {
     if (data) {
-      if (data.data.error) {
-        console.log('PUBLIC KEY: ', process.env.NEXT_PUBLIC_API_PUBLIC_KEY);
-        console.log('PRIVATE KEY: ', process.env.NEXT_PUBLIC_API_PRIVATE_KEY);
-        console.log('PUBLIC SITE URL: ', process.env.NEXT_PUBLIC_SITE_URL);
-        console.log('PUBLIC API USER: ', process.env.NEXT_PUBLIC_API_USER);
-        return;
-      }
-      console.log('data env: ', process.env.NEXT_PUBLIC_SITE_URL, process.env.VERCEL_URL);
+      console.log('PUBLIC KEY: ', process.env.NEXT_PUBLIC_API_PUBLIC_KEY);
+      console.log('PRIVATE KEY: ', process.env.NEXT_PUBLIC_API_PRIVATE_KEY);
+      console.log('PUBLIC SITE URL: ', process.env.NEXT_PUBLIC_SITE_URL);
+      console.log('PUBLIC API USER: ', process.env.NEXT_PUBLIC_API_USER);
       setCharacters(data.data.results);
     }
   }, [data, setCharacters]);
