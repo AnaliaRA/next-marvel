@@ -9,7 +9,7 @@ import sliderStyles from './slider.module.css';
 import { useQuery } from '@tanstack/react-query';
 import ComicCard from '@/app/components/comic';
 import FavoriteButton from '@/app/components/favorite';
-import Preloader from "@/app/components/preloader";
+import Preloader from '@/app/components/preloader';
 
 const fetchComics = async function ({ queryKey }: { queryKey: [string, number] }) {
   const [, id] = queryKey;
