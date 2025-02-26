@@ -21,3 +21,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.visuallyHidden {
+  display: none;
+}

@@ -2,9 +2,7 @@
   background: #000000;
   height: 5em;
   width: var(--width);
-  vertical-align: center;
   border-bottom: 1px solid #333333;
-  tab-index: -1;
   padding: 0.5em 0;
 }
 
@@ -39,6 +37,6 @@
 @media screen and (min-width: 1025px) {
   .logo {
     --padding: 3em;
-    padding-left: var(--padding);
+    padding-left: 4em;
   }
 }

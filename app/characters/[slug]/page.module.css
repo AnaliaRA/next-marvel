@@ -61,7 +61,6 @@
     color: var(--character-text-color);
     margin: 0;
     padding: 2em;
-    vertical-align: middle;
     width: 100%;
 }
 

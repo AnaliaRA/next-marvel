@@ -1,7 +1,7 @@
 .card {
     --favorite-color: var(--marvel-red);
     --hover-after: scaleY(1);
-    --padding: 2em;
+    --padding: 2em 1em;
     --text-color: #ffffff;
     flex-wrap: wrap;
     height: 14.60em;
@@ -79,7 +79,6 @@
 
 .name {
     left: 1em;
-    vertical-align: center;
 }
 
 .favorites {
