@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className={styles.header} aria-label='Main header' tabIndex={-1}>
+    <header className={styles.header} aria-label='Main header'>
       <div className={styles.container}>
         <Link href="/" aria-label="Link to home page" passHref>
           <Image
