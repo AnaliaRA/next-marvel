@@ -33,7 +33,7 @@ export default function Favorites() {
   }
 
   return (
-    <main className="main" aria-labelledby='title' tabIndex={-1}>
+    <main className={`main ${styles.main}`} aria-labelledby="title" tabIndex={-1}>
       <h1 className={styles.title} id="title" aria-label="Favorite Marvel Characters">Favorites</h1>
       <SearchBar />
       <ul className={styles.characterListContainer}>

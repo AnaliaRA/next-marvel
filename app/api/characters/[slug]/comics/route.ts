@@ -32,6 +32,8 @@ export async function GET(req: NextRequest) {
       apikey: apiKey,
       ts: timestamp,
       hash: hash,
+      noVariants: 'true',
+      orderBy: 'modified',
       limit: '20',
     }).toString();
 
