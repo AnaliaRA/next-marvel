@@ -9,12 +9,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - JavaScript
 ### Dependencies
 The project relies on the following dependencies:
-- tanstack
+- @tanstack/react-query-persist-client
+- idb
 - next
 - react
 - react-dom
 - zustand
-
 
 ## Getting Started
 ### Prerequisites
@@ -25,7 +25,7 @@ Make sure you have the following installed on your machine:
 ### Installation
 1. **Clone the repository:**
 
-   ```bash
+   ```bashgit 
    git clone https@github.com:AnaliaRA/next-marvel.git
    cd next-marvel
 
