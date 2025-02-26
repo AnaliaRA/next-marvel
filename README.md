@@ -9,12 +9,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - JavaScript
 ### Dependencies
 The project relies on the following dependencies:
-- tanstack
+- @tanstack/react-query-persist-client
+- idb
 - next
 - react
 - react-dom
 - zustand
-
 
 ## Getting Started
 ### Prerequisites
