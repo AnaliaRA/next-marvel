@@ -26,7 +26,7 @@ export default function FavoriteButton({ id }: FavoriteButtonProps) {
   };
 
   return (
-    <a className={`${styles.favorites} ${isFavorite ? styles.removeFav : styles.addFav}`} href="" onClick={toggleFavorite}>
+    <a className={`${styles.favorites} ${isFavorite ? styles.removeFav : styles.addFav}`} href="" onClick={toggleFavorite} aria-label={`${isFavorite ? 'Remove from favorites' : 'Add to favorites'}`}>
       {isFavorite ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

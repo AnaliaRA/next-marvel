@@ -27,7 +27,7 @@ const Character: React.FC<CharacterProps> = ({ id, name, thumbnail }) => {
           priority
         />
         <div className={styles.actions}>
-          <Link className={styles.name} href={`/characters/${id}`} passHref>
+          <Link className={styles.name} href={`/characters/${id}`} aria-label={`Link to ${name} details`} passHref>
             {name}
           </Link>
           <FavoriteButton id={id} />
