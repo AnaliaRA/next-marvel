@@ -5,9 +5,8 @@ import { useQuery } from '@tanstack/react-query';
 import { useMarvelStore } from '@/app/store/store';
 import CharacterCard from '@/app/components/character';
 import SearchBar from '@/app/components/search';
-
-import { useEffect, useMemo } from "react";
-import Preloader from "@/app/components/preloader";
+import { useEffect, useMemo } from 'react';
+import Preloader from '@/app/components/preloader';
 
 const fetchCharacters = async function () {
   const response = await fetch('/api/characters');
