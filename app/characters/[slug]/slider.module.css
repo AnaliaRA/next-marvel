@@ -26,3 +26,12 @@
 .slider::-webkit-scrollbar {
     display: none;
 }
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .sliderContainer {
+        width: 70vw;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+    }
+}

@@ -7,12 +7,14 @@ import SearchBar from '@/app/components/search';
 import { useEffect, useMemo, useState } from "react";
 import { Character } from '@/app/store/store';
 import Preloader from "@/app/components/preloader";
+import { useSearchStore } from '@/app/store/search';
 import styles from './page.module.css';
 import _ from 'lodash';
 
 export default function Favorites() {
   const { getFavorites } = useFavoriteStore();
   const { getCharacterById, setCharacters, characters } = useMarvelStore();
+  const { search, setValue } = useSearchStore();
   const [loading, setLoading] = useState(true);
 
   const favoriteIds = getFavorites();
@@ -21,7 +23,11 @@ export default function Favorites() {
     [favoriteIds, getCharacterById]
   );
 
+
   useEffect(() => {
+    if (search !== '') {
+      setValue('');
+    }
     if (!_.isEqual(characters, favoriteCharacters)) {
       setCharacters(favoriteCharacters);
     }

@@ -8,6 +8,10 @@
 .container h1 {
     font-size: 2em;
     font-weight: 700;
+    width: 20em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container h2 {
@@ -44,10 +48,9 @@
 }
 
 .imageContainer {
-    position: relative;
     margin: 0;
     padding: 0;
-    width: 40%;
+    width: 20em;
 }
 
 .image {
@@ -126,6 +129,9 @@
     .imageContainer {
         width: 100%;
     }
+    .container h1 {
+        width: 10.5em;
+    }
 }
 @media screen and (min-width: 441px) and (max-width: 576px) {
     .characterContainer {
@@ -147,8 +153,42 @@
     .innerContainer {
         width: 100%;
     }
+    .container h1 {
+        width: 20em;
+    }
+    .imageContainer {
+        width: 100%;
+    }
 }
 /* Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .characterContainer {
+        clip-path:
+                polygon(
+                    /* top right */
+                        100% 0,
+                            /* right */
+                        100% 95%,
+                            /* bottom right */
+                        98% 100%,
+                            /* bottom left */
+                        0 100%,
+                            /* top left */
+                        0 0
+                );
+        width: 100%;
+    }
+    .innerContainer {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    .container h1 {
+        width: 11.5em;
+    }
+    .imageContainer {
+        width: 80%;
+    }
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .innerContainer {
         flex-wrap: nowrap;
@@ -171,12 +211,26 @@
     }
     .innerContainer {
         width: 100%;
+        flex-wrap: nowrap;
     }
-
+    .container h1 {
+        width: 14.75em;
+    }
+    .imageContainer {
+        width: 50%;
+    }
 }
 /* Desktop */
 @media screen and (min-width: 1025px) {
     .innerContainer {
+        width: 70vw;
+        margin: 0 auto;
         flex-wrap: nowrap;
+    }
+    .container h1 {
+        width: 24em;
+    }
+    .imageContainer {
+        width: 40%;
     }
 }

@@ -3,6 +3,7 @@
 import styles from './search.module.css';
 import { useQuery } from '@tanstack/react-query';
 import { useMarvelStore } from '@/app/store/store';
+import { useSearchStore } from '@/app/store/search';
 import { useState, useEffect } from 'react';
 
 const fetchCharactersByName = async function ({ queryKey }: { queryKey: [string, string] }) {
@@ -12,26 +13,24 @@ const fetchCharactersByName = async function ({ queryKey }: { queryKey: [string,
 }
 
 export default function SearchBar() {
-
   const { characters, setCharacters } = useMarvelStore();
-  const [searchValue, setSearchValue] = useState('');
-  const [debouncedValue, setDebouncedValue] = useState(searchValue);
+  const { search, setValue } = useSearchStore();
+  const [debouncedValue, setDebouncedValue] = useState(search);
 
   const { data } = useQuery({
     queryKey: ['results', debouncedValue],
     queryFn: fetchCharactersByName,
-    enabled: debouncedValue !== '',
   });
 
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebouncedValue(searchValue);
+      setDebouncedValue(search);
     }, 600);
 
     return () => {
       clearTimeout(handler);
     };
-  }, [searchValue]);
+  }, [search]);
 
   useEffect(() => {
     if (data) {
@@ -40,21 +39,23 @@ export default function SearchBar() {
   }, [data, setCharacters]);
 
   const handleSearch = (value: string) => {
-    setSearchValue(value);
+    setValue(value);
   }
 
   const resultCount = characters.length;
   return (
       <div className={styles.searchContainer}>
-        <label htmlFor="search" className="visuallyHidden">Search by character name</label>
-        <input
-          type="text"
-          aria-label="Search by character name"
-          placeholder="SEARCH A CHARACTER..."
-          value={searchValue}
-          onChange={(e) => handleSearch(e.target.value)}
-          className={styles.searchInput} />
-        <legend className={styles.searchResults}>{resultCount} results</legend>
+        <form name="searchForm" className={styles.searchForm}>
+          <input
+            name="searchInput"
+            type="search"
+            aria-label="Search by character name"
+            placeholder="SEARCH A CHARACTER..."
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+            className={styles.searchInput} />
+          <legend className={styles.searchResults}>{resultCount} results</legend>
+        </form>
       </div>
   );
 }

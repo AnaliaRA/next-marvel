@@ -71,7 +71,7 @@ export default function Character() {
           </div>
         </div>
         <div className={sliderStyles.sliderContainer}>
-          <h2 className={sliderStyles.heading} aria-label={`List of comics of ${character.name}`}>Comics</h2>
+          <h2 className={sliderStyles.heading} aria-label={`List of comics of ${character.name}`} title={character.name}>Comics</h2>
           <div className={sliderStyles.slider}>
             {memoizedComicCollection?.map((comic) => {
               return (

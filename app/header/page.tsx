@@ -5,10 +5,16 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import React, { useEffect, useState } from "react";
 import { useFavoriteStore } from '@/app/store/favorites';
+import { useSearchStore } from '@/app/store/search';
 
 export default function Header() {
   const [isClient, setIsClient] = useState(false);
   const countFavorites = useFavoriteStore((state) => state.favorites.length);
+  const { setValue } = useSearchStore();
+
+  const handleLogoClick = () => {
+    setValue('');
+  };
 
   useEffect(() => {
     setIsClient(true);
@@ -16,7 +22,7 @@ export default function Header() {
   return (
     <header className={styles.header} aria-label='Main header'>
       <div className={styles.container}>
-        <Link href="/" aria-label="Link to home page" passHref>
+        <Link href="/" aria-label="Link to home page" passHref onClick={handleLogoClick}>
           <Image
             alt="Marvel logo"
             className={styles.logo}
