@@ -77,13 +77,18 @@
     z-index: 5;
 }
 
-.name {
+.innerCard a.name {
     left: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:70%;
+    height: 1em;
 }
 
 .favorites {
     right: 1em;
-    top: 1em;
+    top: 1.25em;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
