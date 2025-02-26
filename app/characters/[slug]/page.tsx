@@ -14,6 +14,7 @@ const fetchComics = async function ({ queryKey }: { queryKey: [string, number] }
   const response = await fetch(`/api/characters/${id}/comics`);
   return await response.json();
 }
+
 export default function Character() {
   const { slug } = useParams();
   const { getCharacterById, setComicCollection } = useMarvelStore();

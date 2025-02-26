@@ -32,7 +32,12 @@ export async function GET() {
     console.log('API/CHARACTERS/: ', url);
     console.log('--- END OF DEBUGGING ---');
 
-    const res = await fetch(url, { headers: { Accept: '*/*' }, method: 'GET' });
+    const res = await fetch(url, {
+      headers: {
+        Accept: '*/*'
+      },
+      method: 'GET'
+    });
 
     if (!res.ok) throw new Error('Failed to fetch Marvel data');
 
