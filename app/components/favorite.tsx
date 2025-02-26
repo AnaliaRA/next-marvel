@@ -2,13 +2,15 @@
 
 import { useFavoriteStore } from '@/app/store/favorites';
 import React, { useState, useEffect } from 'react';
-import styles from './character.module.css';
+import detailStyles from '@/app/characters/[slug]/page.module.css';
+import cardStyles from '@/app/components/character.module.css';
 
 type FavoriteButtonProps = {
   id: number;
+  view: string;
 };
 
-export default function FavoriteButton({ id }: FavoriteButtonProps) {
+export default function FavoriteButton({ id, view }: FavoriteButtonProps) {
   const { favorites, addFavorite, removeFavorite } = useFavoriteStore();
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -25,12 +27,15 @@ export default function FavoriteButton({ id }: FavoriteButtonProps) {
     }
   };
 
+  const styles = view === 'card' ? cardStyles : detailStyles;
+
   return (
     <a
       className={`${styles.favorites} ${isFavorite ? styles.removeFav : styles.addFav}`}
       href=""
       onClick={toggleFavorite}
-      aria-label={`${isFavorite ? 'Remove from favorites' : 'Add to favorites'}`}>
+      aria-label={`${isFavorite ? 'Remove from favorites' : 'Add to favorites'}`}
+    >
       {isFavorite ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

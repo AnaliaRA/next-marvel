@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface Comic {
+export interface Comic {
   id: number;
   dates: [
     {
@@ -16,7 +16,7 @@ interface Comic {
   year: string;
 }
 
-interface Character {
+export interface Character {
   comics: {
     available: number;
     collectionURI: string;

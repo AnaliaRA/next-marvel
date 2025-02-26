@@ -30,7 +30,7 @@ const Character: React.FC<CharacterProps> = ({ id, name, thumbnail }) => {
           <Link className={styles.name} href={`/characters/${id}`} aria-label={`Link to ${name} details`} passHref>
             {name}
           </Link>
-          <FavoriteButton id={id} />
+          <FavoriteButton id={id} view="card"/>
         </div>
       </div>
     </li>

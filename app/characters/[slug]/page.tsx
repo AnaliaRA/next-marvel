@@ -8,6 +8,8 @@ import styles from './page.module.css';
 import sliderStyles from './slider.module.css';
 import { useQuery } from '@tanstack/react-query';
 import ComicCard from '@/app/components/comic';
+import FavoriteButton from '@/app/components/favorite';
+import Preloader from "@/app/components/preloader";
 
 const fetchComics = async function ({ queryKey }: { queryKey: [string, number] }) {
   const [, id] = queryKey;
@@ -23,7 +25,7 @@ export default function Character() {
   const comicCollection = character?.comicCollection;
   const memoizedComicCollection = useMemo(() => comicCollection, [comicCollection]);
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['results', id],
     queryFn: fetchComics
   });
@@ -42,6 +44,10 @@ export default function Character() {
     );
   }
 
+  if (isLoading) {
+    return <Preloader />;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.characterContainer}>
@@ -58,6 +64,7 @@ export default function Character() {
           </div>
           <div className={styles.textContainer}>
             <h1>{character.name}</h1>
+            <FavoriteButton id={character.id} view='detail' />
             <p>{character.description}</p>
           </div>
         </div>

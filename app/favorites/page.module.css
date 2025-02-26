@@ -9,3 +9,10 @@
     width: 100vw;
     margin: 0;
 }
+
+.title {
+    padding: 0;
+    margin: 3em auto 0 auto;
+    width: 91vw;
+
+}

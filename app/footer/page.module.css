@@ -1,6 +1,8 @@
 .footer {
   padding: 2px;
   width: var(--width);
+  position: fixed;
+  bottom: 0;
 }
 
 .rights {

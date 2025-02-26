@@ -4,6 +4,9 @@
   width: var(--width);
   border-bottom: 1px solid #333333;
   padding: 0.5em 0;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
 .logo {
@@ -13,8 +16,29 @@
 
 .favoritesLink {
   float: right;
-  padding: 2em 1.6em;
+  padding: 1.6em 2em;
   color: white;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 400;
+  position: relative;
+}
+
+.heartIcon {
+  fill: var(--marvel-red);
+  width: 24px;
+  height: 24px;
+}
+
+.favoritesLink:hover .heartIcon {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.favoritesLink .count {
+  position: relative;
+  padding: 0 0.5em;
+  top: -0.30em;
 }
 
 /* Tablet */

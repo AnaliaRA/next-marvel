@@ -25,3 +25,11 @@ body {
 .visuallyHidden {
   display: none;
 }
+
+.main {
+  margin-top: 10em;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+}

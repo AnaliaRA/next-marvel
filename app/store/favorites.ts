@@ -10,11 +10,12 @@ type FavoriteStore = {
   addFavorite: (favorite: Favorite) => void;
   clearFavorites: () => void;
   removeFavorite: (id: number) => void;
+  getFavorites: () => number[];
 };
 
 export const useFavoriteStore = create<FavoriteStore>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       favorites: [],
       addFavorite: (favorite) =>
         set((state) => ({
@@ -25,6 +26,7 @@ export const useFavoriteStore = create<FavoriteStore>()(
         set((state) => ({
           favorites: state.favorites.filter((fav) => fav.id !== id),
         })),
+      getFavorites: () => get().favorites.map(fav => fav.id),
     }),
     {
       name: 'marvel-favorites',
