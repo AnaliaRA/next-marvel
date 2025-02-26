@@ -1,0 +1,66 @@
+.header {
+  background: #000000;
+  height: 5em;
+  width: var(--width);
+  border-bottom: 1px solid #333333;
+  padding: 0.5em 0;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.logo {
+  --padding: 1em;
+  padding: 1em 1em 1em var(--padding);
+}
+
+.favoritesLink {
+  float: right;
+  padding: 1.6em 2em;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 400;
+  position: relative;
+}
+
+.heartIcon {
+  fill: var(--marvel-red);
+  width: 24px;
+  height: 24px;
+}
+
+.favoritesLink:hover .heartIcon {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.favoritesLink .count {
+  position: relative;
+  padding: 0 0.5em;
+  top: -0.30em;
+}
+
+/* Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .logo {
+    --padding: 3.85em;
+    padding-left: var(--padding);
+  }
+  .header {
+    padding: 1em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    --padding: 3.85em;
+    padding-left: var(--padding);
+  }
+}
+/* Desktop */
+@media screen and (min-width: 1025px) {
+  .logo {
+    --padding: 3em;
+    padding-left: 4em;
+  }
+}

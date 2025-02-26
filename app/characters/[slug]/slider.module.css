@@ -1,0 +1,37 @@
+.sliderContainer {
+    background-color: white;
+    margin: 0 auto;
+    padding: 2em 0 0 0;
+    overflow: hidden;
+    width: 90vw;
+    border-bottom: 4px solid #d9d9d9;
+}
+
+.heading {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.slider {
+    background-color: white;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .sliderContainer {
+        width: 70vw;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+    }
+}

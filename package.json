@@ -1,25 +1,39 @@
 {
   "name": "next-marvel",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A Next.js app to display Marvel characters and comics",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.7"
+    "@tanstack/react-query": "5.66.9",
+    "@tanstack/react-query-devtools": "5.66.9",
+    "@tanstack/react-query-persist-client": "5.66.9",
+    "idb": "8.0.2",
+    "lodash": "4.17.21",
+    "next": "15.1.7",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zustand": "5.0.3"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@eslint/eslintrc": "3",
+    "@types/lodash": "4.17.15",
+    "@types/node": "20",
+    "@types/react": "19",
+    "@types/react-dom": "19",
+    "eslint": "9",
     "eslint-config-next": "15.1.7",
-    "@eslint/eslintrc": "^3"
-  }
+    "prettier": "3.5.1",
+    "typescript": "5"
+  },
+  "author": "AnaliaRA"
 }

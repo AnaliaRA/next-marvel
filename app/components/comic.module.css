@@ -1,0 +1,49 @@
+.card {
+    flex: 0 0 auto;
+    width: 160px;
+    text-align: left;
+    scroll-snap-align: start;
+    padding: 2em 2em 0 0;
+}
+
+.image {
+    height: 16.8em;
+    width: 11.2em;
+}
+
+.title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.year {
+    font-size: 0.706em;
+    font-weight: lighter;
+    color: #777777;
+    line-height: 0.826;
+}
+
+/* Mobile */
+@media screen and (max-width: 440px) {
+    .card {
+        --padding: 0.6em;
+    }
+}
+@media screen and (min-width: 441px) and (max-width: 576px) {
+    .card {
+        --padding: 1em;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .card {
+        --padding: 1.2em;
+    }
+}
+/* Desktop */
+@media screen and (min-width: 1025px) {
+    .card {
+        --padding: 2em;
+    }
+}

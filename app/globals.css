@@ -1,42 +1,35 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --character-background: #000000;
+  --character-text-color: #ffffff;
+  --copy-text-color: #171717;
+  --marvel-red: #ec1d24;
+  --width: 100vw;
 }
 
 html,
 body {
-  max-width: 100vw;
+  width: var(--width);
   overflow-x: hidden;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+  font-family: "Roboto Light", sans-serif;
+  text-rendering: optimizeLegibility;
+  background-color: var(--background);
+  color: #000000;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.visuallyHidden {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.main {
+  margin-top: 6em;
+}
+
+h1, h2 {
+  text-transform: uppercase;
 }
