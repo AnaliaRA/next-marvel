@@ -33,8 +33,10 @@ export default function Home() {
   }
 
   return (
-    <main className="main" aria-labelledby='title' tabIndex={-1}>
-      <h1 id="title" className="visuallyHidden">Marvel Characters</h1>
+    <main className={`main ${styles.main}`} aria-labelledby="title" tabIndex={-1}>
+      <h1 id="title" className="visuallyHidden">
+        Marvel Characters
+      </h1>
       <SearchBar />
       <ul className={styles.characterListContainer}>
         {memoizedCharacters.map((character) => {

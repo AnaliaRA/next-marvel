@@ -1,7 +1,7 @@
 .footer {
   padding: 2px;
   width: var(--width);
-  position: fixed;
+  position: relative;
   bottom: 0;
 }
 
